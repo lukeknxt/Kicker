@@ -1,0 +1,12 @@
+form {
+
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#form {
+  margin-left: 400;
+  margin-right: 400;
+  color: red;
+  padding: 100;
+}
