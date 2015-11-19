@@ -1,33 +1,41 @@
+function test() {
+  console.log("Test");
+}
+
 function count() {
-  var form = document.querySelector("form");
-  var height, radius, angle, length, foot, deepth, radiusIs;
-  form.addEventListener("submit", function(event) {
-    height = +form.elements.height.value;
-    radius = +form.elements.radius.value;
-    angle = +form.elements.angle.value;
-    event.preventDefault();
+  console.log("Count Invoked");
+  var radiusIs;
 
-    var angleRad = angle * 0.0174532925;
-    var angleBrad = ((180 - angle)/2)*0.0174532925;
+  var height = document.getElementById('height').value;
+  var angle = document.getElementById('angle').value;
+  var radius = document.getElementById('radius').value;
+  console.log(height, angle, radius);
 
-    if (radius == "") {
-      radiusIs = Math.round(height/(2*(Math.sin(angleRad/2)*Math.sin(angleRad/2)))*100)/100;
-      form.elements.radius.value = radiusIs;
-      console.log(radiusIs );
-    }
-    else if (angle == "") {
-      var angleIs = (2 * Math.asin(Math.sqrt(height/(2*radius)))/0.0174532925).toFixed(2);
-      form.elements.angle.value = angleIs;
-      console.log(angleIs);
-    }
+  var length = document.getElementById('length');
+  var foot = document.getElementById('foot');
+  var deepth = document.getElementById('deepth');
 
-    length = (height / Math.sin(angleRad/2)).toFixed(2);
-    document.getElementById("length").innerHTML = "Length: " + length + " meters";
+  var drc = 0.0174532925; // degree to radian constant
+  var angleRad = angle * drc; // radius angle in radian
+  var angleBrad = ((180 - angle) / 2) * drc; //reversed angle in radian, needed for calc
 
-    foot = (height * Math.tan(angleBrad)).toFixed(2);
-    document.getElementById("foot").innerHTML = "Foot: " +foot+" meters";
 
-    deepth = (radiusIs-radiusIs*Math.sin((90-angle/2)*0.0174532925)).toFixed(2);
-    document.getElementById("deepth").innerHTML = "Deepth: "+deepth+" meters";
-  });
+  
+  if (!radius) {
+    radiusIs = Math.round(height / (2 * (Math.sin(angleRad / 2) * Math.sin(angleRad / 2))) * 100) / 100;
+    document.getElementById('radius').innerHTML = radiusIs;
+    console.log(radiusIs);
+  } else if (!angle) {
+    var angleIs = (2 * Math.asin(Math.sqrt(height / (2 * radius))) / drc).toFixed(2);
+    document.getElementById('angle').innerHTML = angleIs;
+    console.log(angleIs);
+  }
+
+  length.innerHTML = (height / Math.sin(angleRad / 2)).toFixed(2);
+
+  foot.innerHTML = (height * Math.tan(angleBrad)).toFixed(2);
+
+  deepth.innerHTML = (radiusIs - radiusIs * Math.sin((90 - angle / 2) * drc)).toFixed(2);
+
+
 }

@@ -1,59 +1,36 @@
 <head>
   <title>Kicker</title>
   <link rel="stylesheet" type="text/css" href="Kicker.css">
+  <script type="text/javascript" src="Kicker.js"></script>
 </head>
 
 <body>
-  <h4>Enter Parameters</h4>
-  <div class="form">
-    <form>
-    Height: <input type="text" name="height">meters<br>
-    Angle: <input type="text" name="angle">degrees<br>
-    Radius: <input type="text" name="radius">meters<br>
-    <button type="submit" class="submit_button" onclick="count()">Count</button>
-  </form>
-    <p id="length">Length:</p>
-    <p id="foot">Foot:</p>
-    <p id="deepth">Deepth:</p>
+  <div>Enter parametrs<div>
+
+  <div class="input_field"> Height
+    <input type="number" id="height"/>
+  </div>
+  <div class="input field"> Angle
+    <input type="number" id="angle"/>
+  </div>
+  <div class="input field"> Radius
+    <input type="number" id="radius"/>
+  </div>
+  <div class="input field"> Push the button
+    <input type="button" id="push"
+    onclick="count()" value="Cout"/>
   </div>
 
-  <!--
-  <script>
-  var form = document.querySelector("form");
-  var height, radius, angle, length, foot, deepth, radiusIs;
-  form.addEventListener("submit", function(event) {
-    height = +form.elements.height.value;
-    radius = +form.elements.radius.value;
-    angle = +form.elements.angle.value;
-    event.preventDefault();
+  <div class="output_field">
+  <div>
+    Length: <a id="length">???</a>
+  </div>
+  <div>
+    Foot: <a id="foot">???</a>
+  </div>
+  <div>
+    Deepth: <a id="deepth">???</a>
+  </div>
+  </div>
 
-    var angleRad = angle * 0.0174532925;
-    var angleBrad = ((180 - angle)/2)*0.0174532925;
-
-    if (radius == "") {
-      radiusIs = Math.round(height/(2*(Math.sin(angleRad/2)*Math.sin(angleRad/2)))*100)/100;
-      form.elements.radius.value = radiusIs;
-      console.log(radiusIs );
-    }
-    else if (angle == "") {
-      var angleIs = (2 * Math.asin(Math.sqrt(height/(2*radius)))/0.0174532925).toFixed(2);
-      form.elements.angle.value = angleIs;
-      console.log(angleIs);
-    }
-
-    length = (height / Math.sin(angleRad/2)).toFixed(2);
-    document.getElementById("length").innerHTML = "Length: " + length + " meters";
-
-    foot = (height * Math.tan(angleBrad)).toFixed(2);
-    document.getElementById("foot").innerHTML = "Foot: " +foot+" meters";
-
-    deepth = (radiusIs-radiusIs*Math.sin((90-angle/2)*0.0174532925)).toFixed(2);
-    document.getElementById("deepth").innerHTML = "Deepth: "+deepth+" meters";
-
-
-  });
-
-  </script>
- -->
-  <script type="text/javascript" scr="Kicker.html"></script>
 </body>
