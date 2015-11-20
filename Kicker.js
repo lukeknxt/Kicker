@@ -1,8 +1,8 @@
 function count() {
-  var height = document.getElementById('height').value;
+  var height = document.getElementById('height').value; // always required value
 
   var angle = document.getElementById('angle').value;
-  var radius = document.getElementById('radius').value;
+  var radius = document.getElementById('radius').value;  
 
   var length = document.getElementById('length');
   var foot = document.getElementById('foot');
@@ -11,8 +11,6 @@ function count() {
   var drc = 0.0174532925; // degree to radian constant
   var angleRad = drc * isAngle(angle); // radius angle in radian
   var angleBrad = ((180 - isAngle(angle)) / 2) * drc; //reversed angle in radian, needed for calc
-  var radiusIs = isRadius(radius); // freez!
-  var angleIs = isAngle(angle); // freez!
 
   document.getElementById('radius').value = isRadius(radius);
   document.getElementById('angle').value = isAngle(angle);
