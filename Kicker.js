@@ -2,7 +2,7 @@ function count() {
   var height = document.getElementById('height').value; // always required value
 
   var angle = document.getElementById('angle').value;
-  var radius = document.getElementById('radius').value;  
+  var radius = document.getElementById('radius').value;
 
   var length = document.getElementById('length');
   var foot = document.getElementById('foot');
@@ -36,3 +36,5 @@ function count() {
     }
   }
 }
+
+module.exports = count();
