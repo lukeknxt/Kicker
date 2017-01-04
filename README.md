@@ -1,3 +1,3 @@
-Kiker radius calculator.
-JS
-Web Workers
+#Kicker 
+Radius calculator
+
