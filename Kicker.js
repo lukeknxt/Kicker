@@ -37,4 +37,4 @@ function count() {
   }
 }
 
-module.exports = count();
+//module.exports = count();
