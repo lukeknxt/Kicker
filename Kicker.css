@@ -2,3 +2,9 @@ body {
   font-size: 2em;
   background-color: green;
 }
+
+
+.container {
+  margin: 0 auto;
+  width: 300px;
+}
