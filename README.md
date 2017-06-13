@@ -1,3 +1,0 @@
-#Kicker 
-Radius calculator
-
