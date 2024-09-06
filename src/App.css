@@ -1,5 +1,6 @@
-.App {
-  text-align: center;
+.App svg {
+  display: block;
+  margin: auto;
 }
 
 .experiments {
@@ -7,9 +8,9 @@
 }
 
 .central {
+  margin: auto;
   min-width: 70%;
-  max-width: 80%;
-  display: inline-block;
+  max-width: 75%;
   justify-content: space-between;
 }
 
@@ -23,7 +24,6 @@
 }
 
 input[type=range] {
-
   height: 36px;
   -webkit-appearance: none;
   margin: 10px 0;
